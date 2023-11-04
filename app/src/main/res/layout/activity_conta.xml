@@ -26,13 +26,6 @@
                     android:contentDescription="@string/todo"
                     app:srcCompat="@drawable/imagem_odonto" />
 
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Button" />
-
 
         </LinearLayout>
 
