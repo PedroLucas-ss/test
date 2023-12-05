@@ -49,9 +49,7 @@ public class MenuActivity extends AppCompatActivity {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+
     }
 
     @Override
@@ -74,14 +72,12 @@ public class MenuActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_menu);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
+
+
     public void doencas(View view) {
         Intent in = new Intent( MenuActivity.this, DoencaInfo.class);
         startActivity(in);
     }
 }
+
+

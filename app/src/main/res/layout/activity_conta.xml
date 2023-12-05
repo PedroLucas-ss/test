@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".conta">
@@ -24,6 +27,10 @@
                     android:alpha="0.0"
                     android:background="@drawable/back"
                     android:contentDescription="@string/todo"
+                    android:fadeScrollbars="true"
+                    android:isScrollContainer="true"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scrollIndicators="bottom"
                     app:srcCompat="@drawable/imagem_odonto" />
 
 
@@ -33,15 +40,14 @@
             android:id="@+id/imageView5"
             android:layout_width="200dp"
             android:layout_height="198dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="120dp"
             android:padding="9dp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearance="@style/ShapeAppearance.Material3.Tooltip"
             app:shapeAppearanceOverlay="@style/circular"
-            app:srcCompat="@drawable/female"
+            app:srcCompat="@drawable/imageprof"
             app:strokeColor="@color/grean_oh"
             app:strokeWidth="5dp"
             tools:ignore="NotSibling" />
@@ -61,68 +67,100 @@
             app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
         <EditText
-            android:id="@+id/editTextUsername"
+            android:id="@+id/editTextUsername0"
             android:layout_width="300dp"
             android:layout_height="55dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="64dp"
             android:background="@drawable/sla"
             android:textCursorDrawable="@color/grean3"
-            app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="300dp"
             android:layout_height="55dp"
-            android:layout_below="@id/editTextUsername"
-            android:layout_marginBottom="32dp"
+            android:layout_below="@id/editTextUsername0"
+            android:layout_marginTop="32dp"
             android:background="@drawable/sla"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:padding="15dp"
             android:textCursorDrawable="@color/grean3"
-            app:layout_constraintBottom_toTopOf="@+id/editTextCRO"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsername0" />
 
         <EditText
             android:id="@+id/editTextCRO"
             android:layout_width="300dp"
             android:layout_height="55dp"
-            android:layout_below="@id/editTextUsername"
-            android:layout_marginTop="619dp"
+            android:layout_below="@id/editTextUsername0"
+            android:layout_marginTop="24dp"
             android:background="@drawable/sla"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:padding="15dp"
             android:textCursorDrawable="@color/grean3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTelefone" />
+
+        <EditText
+            android:id="@+id/editTextTelefone"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_below="@id/editTextUsername0"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/sla"
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textCursorDrawable="@color/grean3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+        <EditText
+            android:id="@+id/editTextEstado"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_below="@id/editTextUsername0"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/sla"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textCursorDrawable="@color/grean3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCRO" />
 
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="194dp"
             android:layout_height="45dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/wfwefwef"
+            android:fadeScrollbars="true"
             android:fontFamily="@font/montserrat"
+            android:nestedScrollingEnabled="true"
+            android:onClick="menuacti"
+            android:scrollbarStyle="outsideInset"
             android:text="Salvar"
             android:textAllCaps="false"
-            android:onClick="menuacti"
             android:textColor="@color/white"
             android:textColorHighlight="#673AB7"
             android:textColorLink="#673AB7"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.508"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonns" />
 
         <Button
             android:id="@+id/buttonns"
             android:layout_width="144dp"
             android:layout_height="45dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/button"
             android:fontFamily="@font/montserrat"
             android:onClick="menuacti"
@@ -133,11 +171,10 @@
             android:textColorLink="#673AB7"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCRO" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEstado" />
 
         <TextView
             android:id="@+id/textView7"
@@ -150,7 +187,7 @@
             android:text="Nome"
             android:textColor="@color/grean2"
             android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextUsername"
+            app:layout_constraintBottom_toTopOf="@+id/editTextUsername0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -174,16 +211,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="190dp"
-            android:layout_marginBottom="4dp"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat_bold"
             android:text="Telefone            "
             android:textColor="@color/grean2"
             android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTelefone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="190dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="CRO            "
+            android:textColor="@color/grean2"
+            android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/editTextCRO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="190dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Estado            "
+            android:textColor="@color/grean2"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextEstado"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
